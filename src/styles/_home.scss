@@ -1,0 +1,229 @@
+// .home {
+//   padding: 2rem 5%;
+//   display: flex;
+//   flex-direction: column;
+//   height: calc(100vh - 4rem);
+//   width: 100%;
+
+//   > section {
+//     width: 100%;
+//     height: 18.75rem;
+//     margin: auto;
+//     background: url("../assets/cover.jpg") no-repeat center / cover;
+//   }
+
+//   > h1 {
+//     @include heading(1px);
+//     margin-top: 3rem;
+//     @include flex(row, space-between, center);
+//   }
+
+//   .findmore {
+//     font-size: 1rem;
+//   }
+
+//   > main {
+//     width: 100%;
+//     flex: 1;
+//     display: flex;
+//     gap: 1rem;
+//     overflow-x: auto;
+
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+//   }
+// }
+
+// .product-card {
+//   width: 18.75rem;
+//   height: 25rem;
+//   padding: 1rem;
+//   flex: none;
+//   @include flex(column, flex-start, center, 4px);
+//   position: relative;
+//   background-color: white;
+
+//   &:hover > div {
+//     opacity: 1;
+//   }
+
+//   img {
+//     @include square(calc(18.75rem - 3rem));
+//     object-fit: cover;
+//     margin: 1rem;
+//   }
+
+//   span {
+//     font-weight: 700;
+//     font-size: 1.1rem;
+//   }
+
+//   > div {
+//     opacity: 0;
+//     position: absolute;
+//     @include square(100%);
+//     top: 0;
+//     left: 0;
+//     background-color: #0000006b;
+//     @include flex;
+//     button {
+//       @include flex;
+//       @include square(3rem);
+//       border-radius: 100%;
+//       border: none;
+//       background-color: $color3;
+//       cursor: pointer;
+//       color: $color1;
+//       font-size: 1.1rem;
+//       transition: all 0.3s;
+//       &:hover {
+//         rotate: 20deg;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+.home {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(9, 183, 226, 0.918); // Updated background color
+
+  > section {
+    width: 100%;
+    height: 30vh;
+    margin: 3rem auto;
+    background: url("../assets/cover2.jpg") no-repeat center / cover;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  > h1 {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #110202;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInDown 1s ease; // Added animation
+  }
+
+  .findmore {
+    font-size: 1.2rem;
+    color: #041113;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-left: auto;
+
+    &:hover {
+      color: #008ba3;
+    }
+  }
+
+  > main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  width: 20rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  span {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  > div {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+
+    button {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+
+      &:hover {
+        transform: rotate(20deg);
+        background-color: #45a049;
+      }
+    }
+  }
+
+  &:hover > div {
+    opacity: 1;
+  }
+}
